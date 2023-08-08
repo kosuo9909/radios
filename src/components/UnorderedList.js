@@ -6,12 +6,19 @@ import './UnorderedList.css';
 const UnorderedList = () => {
   return (
     <div className='unordered-list-wrapper'>
-      <h2>Composer</h2>
+      <h2
+        aria-label={`Composer is related to a list of ${
+          Object.keys(composerItems).length
+        } elements.`}
+        tabIndex={0}
+      >
+        Composer
+      </h2>
 
-      <ul tabIndex={0} className='ul-wrapper' id='ul-wrapper' title='Composer'>
+      <ul className='ul-wrapper'>
         {Object.keys(composerItems).map((item) => (
           <>
-            <li className='span-wrapper'>
+            <li className='span-wrapper' tabIndex={0}>
               <span>{item}</span>
               <span>{composerItems[item]}</span>
             </li>
@@ -19,22 +26,36 @@ const UnorderedList = () => {
         ))}
       </ul>
 
-      <h2>Messages</h2>
-      <ul tabIndex={0} className='ul-wrapper' title='Messages'>
+      <h2
+        aria-label={`Messages is related to a list of ${
+          Object.keys(messageItemsMock).length
+        } elements.`}
+        tabIndex={0}
+      >
+        Messages
+      </h2>
+      <ul className='ul-wrapper'>
         {Object.keys(messageItemsMock).map((item) => (
           <>
-            <li className='span-wrapper'>
+            <li className='span-wrapper' tabIndex={0}>
               <span>{item}</span>
               <span>{messageItemsMock[item]}</span>
             </li>
           </>
         ))}
       </ul>
-      <h2>Calls</h2>
-      <ul tabIndex={0} className='ul-wrapper' title='Calls'>
+      <h2
+        aria-label={`Composer is related to a list of ${
+          Object.keys(callsItemsMock).length
+        } elements.`}
+        tabIndex={0}
+      >
+        Calls
+      </h2>
+      <ul className='ul-wrapper'>
         {Object.keys(callsItemsMock).map((item) => (
           <>
-            <li className='span-wrapper'>
+            <li className='span-wrapper' tabIndex={0}>
               <span>{item}</span>
               <span>{callsItemsMock[item]}</span>
             </li>
