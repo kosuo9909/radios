@@ -7,12 +7,13 @@ const UnorderedList = () => {
   return (
     <div className='unordered-list-wrapper'>
       <h2>Composer</h2>
+
       <ul tabIndex={0} className='ul-wrapper' id='ul-wrapper' title='Composer'>
         {Object.keys(composerItems).map((item) => (
           <>
             <li className='span-wrapper'>
-              <span tabIndex={0}>{item}</span>
-              <span tabIndex={0}>{composerItems[item]}</span>
+              <span>{item}</span>
+              <span>{composerItems[item]}</span>
             </li>
           </>
         ))}
@@ -23,8 +24,8 @@ const UnorderedList = () => {
         {Object.keys(messageItemsMock).map((item) => (
           <>
             <li className='span-wrapper'>
-              <span tabIndex={0}>{item}</span>
-              <span tabIndex={0}>{messageItemsMock[item]}</span>
+              <span>{item}</span>
+              <span>{messageItemsMock[item]}</span>
             </li>
           </>
         ))}
@@ -34,8 +35,8 @@ const UnorderedList = () => {
         {Object.keys(callsItemsMock).map((item) => (
           <>
             <li className='span-wrapper'>
-              <span tabIndex={0}>{item}</span>
-              <span tabIndex={0}>{callsItemsMock[item]}</span>
+              <span>{item}</span>
+              <span>{callsItemsMock[item]}</span>
             </li>
           </>
         ))}
