@@ -1,0 +1,24 @@
+.radio-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 1200px;
+}
+
+.fieldset-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+legend {
+  margin-bottom: 20px;
+}
