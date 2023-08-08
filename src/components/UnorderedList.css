@@ -1,0 +1,20 @@
+.unordered-list-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ul-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 650px;
+  padding: 20px 0;
+}
+.span-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 200px;
+}
