@@ -1,10 +1,11 @@
 import './App.css';
-import DialogTest from './components/DialogTest';
+// import DialogTest from './components/DialogTest';
+import DialogTestVanilla from './components/DialogTestVanilla';
 
 function App() {
   return (
     <div className="App">
-      <DialogTest />
+      <DialogTestVanilla />
     </div>
   );
 }
