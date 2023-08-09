@@ -1,12 +1,12 @@
 import './App.css';
-import RadioForm from './components/RadioForm';
-import UnorderedList from './components/UnorderedList';
+import CustomButtons from './components/CustomButtons';
+// import DialogTest from './components/DialogTest';
+// import DialogTestVanilla from './components/DialogTestVanilla';
 
 function App() {
   return (
     <div className='App'>
-      <RadioForm />
-      <UnorderedList />
+      <CustomButtons />
     </div>
   );
 }

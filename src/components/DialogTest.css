@@ -1,0 +1,60 @@
+.dialog-wrapper {
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.dialog-wrapper{
+    position: absolute;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+dialog {
+    margin: 0 auto;
+    padding: 20px;
+    flex-direction: column;
+    border: none;
+    box-shadow: 0 0 3px 2px rgb(205, 200, 200);
+    border-radius: 10px;
+}
+
+.quick-settings-title {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+.settings-button {
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.all-settings-button{
+    margin-bottom: 10px;
+    color: green;
+    width: 180px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.all-settings-button:hover, .all-settings-button:active, .all-settings-button:visited, .all-settings-button:focus{
+    background-color: lightgrey     ;
+}
+
+.quick-settings-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: grey;
+}
+
+.quick-settings-item-wrapper{
+    display: flex;
+    gap: 10px;
+}
