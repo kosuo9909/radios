@@ -1,0 +1,41 @@
+.custom-button-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.custom-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 60px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.custom-button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.071);
+}
+
+.custom-button-item-wrapper{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    gap: 5px;
+}
+
+.svg-span{
+    width: 50px;
+    height: 25px;
+    color: grey;
+    margin-left: 5px;
+}

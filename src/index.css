@@ -7,3 +7,12 @@
 .invisible {
   visibility: hidden;
 }
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.grey-medium {
+  color: grey;
+  font-size: 13px;
+}
