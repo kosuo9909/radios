@@ -1,11 +1,53 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import './Tablist.css';
+import { useRef } from 'react';
+import { useEffect } from 'react';
 
 const Tablist = () => {
   const location = useLocation();
+  const linksRef = useRef([]);
   const isActive = (pathName) => {
     return pathName === location.pathname;
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const currentActiveIndex = linksRef.current.findIndex(
+        (link) => link.pathname === location.pathname
+      );
+      let newActiveIndex = currentActiveIndex;
+
+      if (e.key === 'ArrowDown') {
+        newActiveIndex =
+          currentActiveIndex + 1 > linksRef.current.length
+            ? currentActiveIndex
+            : currentActiveIndex + 1;
+      } else if (e.key === 'ArrowUp') {
+        newActiveIndex =
+          currentActiveIndex - 1 < 0
+            ? currentActiveIndex
+            : currentActiveIndex - 1;
+      }
+
+      if (newActiveIndex !== currentActiveIndex) {
+        if (linksRef.current[newActiveIndex]) {
+          linksRef.current[newActiveIndex].click();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [location.pathname]);
+
+  const links = [
+    { to: '/general', label: 'General' },
+    { to: '/appearance', label: 'Appearance' },
+    { to: '/notifications', label: 'Notifications' },
+    { to: '/preferences', label: 'Preferences' },
+    { to: '/keyboard', label: 'Keyboard' },
+  ];
+
   return (
     <>
       <h2>Settings</h2>
@@ -16,46 +58,18 @@ const Tablist = () => {
         className="tablist-wrapper"
         aria-orientation="vertical"
       >
-        <Link
-          to="/general"
-          role="tab"
-          aria-selected={isActive('/general')}
-          className={isActive('/general') ? 'list-active' : ''}
-        >
-          General
-        </Link>
-        <Link
-          to="/appearance"
-          role="tab"
-          aria-selected={isActive('/appearance')}
-          className={isActive('/appearance') ? 'list-active' : ''}
-        >
-          Appearance
-        </Link>
-        <Link
-          to="/notifications"
-          role="tab"
-          aria-selected={isActive('/notifications')}
-          className={isActive('/notifications') ? 'list-active' : ''}
-        >
-          Notifications
-        </Link>
-        <Link
-          to="/preferences"
-          role="tab"
-          aria-selected={isActive('/preferences')}
-          className={isActive('/preferences') ? 'list-active' : ''}
-        >
-          Preferences
-        </Link>
-        <Link
-          to="/keyboard"
-          role="tab"
-          aria-selected={isActive('/keyboard')}
-          className={isActive('/keyboard') ? 'list-active' : ''}
-        >
-          Keyboard
-        </Link>
+        {links.map((link, index) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            role="tab"
+            aria-selected={isActive(link.to)}
+            className={isActive(link.to) ? 'list-active' : ''}
+            ref={(element) => (linksRef.current[index] = element)}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
       <div className="content-wrapper">
         <Outlet />
