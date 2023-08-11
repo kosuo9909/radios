@@ -1,4 +1,5 @@
 .tablist-wrapper {
+  position: fixed;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -13,4 +14,10 @@ a {
 .list-active {
   background-color: greenyellow;
   border: 1px solid rgba(0, 0, 0, 0.144);
+}
+
+.content-wrapper {
+  margin-left: 200px; 
+  overflow: auto; 
+  height: 100%; 
 }
