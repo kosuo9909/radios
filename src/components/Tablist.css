@@ -1,0 +1,16 @@
+.tablist-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  width: 150px;
+  border-radius: 15px;
+}
+
+.list-active {
+  background-color: greenyellow;
+  border: 1px solid rgba(0, 0, 0, 0.144);
+}
