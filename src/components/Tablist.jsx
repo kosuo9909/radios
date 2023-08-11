@@ -19,7 +19,7 @@ const Tablist = () => {
 
       if (e.key === 'ArrowDown') {
         newActiveIndex =
-          currentActiveIndex + 1 > linksRef.current.length
+          currentActiveIndex + 1 > linksRef.current.length - 1
             ? currentActiveIndex
             : currentActiveIndex + 1;
       } else if (e.key === 'ArrowUp') {
@@ -64,6 +64,7 @@ const Tablist = () => {
             to={link.to}
             role="tab"
             aria-selected={isActive(link.to)}
+            // aria-label={`${link.label} tab ${index} of ${links.length}`}
             className={isActive(link.to) ? 'list-active' : ''}
             ref={(element) => (linksRef.current[index] = element)}
           >
